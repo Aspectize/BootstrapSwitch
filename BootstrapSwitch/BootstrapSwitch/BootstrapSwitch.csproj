@@ -49,8 +49,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="bootstrap-switch\bootstrap-switch.min.css" />
-    <Content Include="bootstrap-switch\bootstrap-switch.min.js" />
+    <Content Include="bootstrap-switch\bootstrap-switch.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bootstrap-switch\bootstrap-switch.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="BootstrapSwitch.js" />
   </ItemGroup>
   <ItemGroup>
