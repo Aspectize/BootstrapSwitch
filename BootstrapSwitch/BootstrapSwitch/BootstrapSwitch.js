@@ -50,7 +50,10 @@ Aspectize.Extend("BootstrapSwitch", {
                 var optionName = p.charAt(0).toLowerCase() + p.slice(1);
 
                 if (optionName == 'state') {
-                    theSwitch.bootstrapSwitch(optionName, arg[p], true);
+                    var state = arg[p];
+                    if (state !== null) {
+                        theSwitch.bootstrapSwitch(optionName, arg[p], true);
+                    }
                 } else {
                     theSwitch.bootstrapSwitch(optionName, arg[p]);
                 }
