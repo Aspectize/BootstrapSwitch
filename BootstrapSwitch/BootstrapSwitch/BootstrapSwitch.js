@@ -49,13 +49,23 @@ Aspectize.Extend("BootstrapSwitch", {
             for (var p in arg) {
                 var optionName = p.charAt(0).toLowerCase() + p.slice(1);
 
-                if (optionName == 'state') {
-                    var state = arg[p];
-                    if (state !== null) {
-                        theSwitch.bootstrapSwitch(optionName, arg[p], true);
-                    }
-                } else {
+                if (optionName == 'indeterminate') {
                     theSwitch.bootstrapSwitch(optionName, arg[p]);
+                }
+            }
+
+            for (var p in arg) {
+                var optionName = p.charAt(0).toLowerCase() + p.slice(1);
+                if (optionName !== 'indeterminate') {
+                    if (optionName == 'state') {
+                        var state = arg[p];
+                        if (state !== null) {
+                            theSwitch.bootstrapSwitch(optionName, arg[p], true);
+                            theSwitch.bootstrapSwitch('indeterminate', false);
+                        }
+                    } else {
+                        theSwitch.bootstrapSwitch(optionName, arg[p]);
+                    }
                 }
             }
         });
